@@ -1,0 +1,288 @@
+#:kivy 1.0.9
+
+RootWidget:
+
+<RootWidget>:
+
+    specialwidget: cerc_draw
+    startstopbutton: start_button
+    resetbutton: reset_button
+    graphwidget: graph
+    protslider: protslid
+    glutslider: glutslid
+    lipslider: lipslid
+    attackbutton: attack_button
+
+    graphleftspace: graphleft
+    graphrightspace: graphright
+
+    graphcontainerwidge: graphcontainer
+
+    BoxLayout:
+        orientation: 'horizontal'
+        
+        LeftBar:
+            orientation: 'vertical'
+            size_hint: (2/3, 1)
+
+            canvas:
+                Color:
+                    rgb: (1, 1, 1, 1)
+                Rectangle:
+                    size: (1/200 * self.width, self.height)
+                    pos: (self.x + self.width, self.y)
+
+            UpBar:
+                orientation: 'horizontal'
+                size_hint: (1, 5/6)
+
+                LeftGridSpace:
+                    orientation: 'vertical'
+                    size_hint: (1/12, 1)
+
+                    canvas:
+                        Color:
+                            rgba: (1, 0, 0, 0)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+
+                Circles_drawings:
+                    id: cerc_draw
+                    orientation: 'vertical'
+                    size_hint: (5/6, 1)
+
+                    canvas:
+                        Color:
+                            rgba: (0, 1, 0, 0)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+
+                RightGridSpace:
+                    orientation: 'vertical'
+                    size_hint: (1/12, 1)
+
+                    canvas:
+                        Color:
+                            rgba: (0, 0, 1, 0)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+                
+            SubBar:
+                orientation: 'horizontal'
+                size_hint: (1, 1/6)
+
+                canvas:
+                    Color:
+                        rgb: (0.3, 0.3, 0.3, 0)
+                    Rectangle: 
+                        size: self.size
+                        pos: self.pos
+                
+                StartStop:
+                    id: start_button
+                    text: 'play'
+                    size_hint: (None,1)
+                    size: self.height, self.height
+
+                ResetSimulation:
+                    id: reset_button
+                    text: 'reset'
+                    size_hint: (None, 1)
+                    size: self.height, self.height
+
+                Attack:
+                    id: attack_button
+                    text: 'Attack'
+                    size_hint: (None, 1)
+                    size: self.height, self.height
+                
+        SideBar:
+            orientation: 'vertical'
+            size_hint: (1/3, 1)
+            
+            BoxLayout:
+                id: graphcontainer
+                orientation : 'horizontal'
+                size_hint: (1, 2/5)
+                GraphLeft:
+                    id: graphleft
+                    text:"Nothing here"
+                    size_hint: (0.2, 0.8)
+
+                    canvas:
+                        Color:
+                            rgba: (0, 0, 1, 0)
+
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+
+                GraphWidget:
+                    orientation: 'horizontal'
+                    id: graph
+                    size_hint: (0.6, 0.8)
+
+                GraphRight:
+                    id: graphright
+                    text:"Nothing here"
+                    size_hint: (0.2, 0.8)
+
+                    canvas:
+                        Color:
+                            rgba: (0, 0, 1, 0)
+                            
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+
+            SlidingButtons:
+                orientation: 'horizontal'
+                id: sliders
+                size_hint: (1, 3/5)
+
+                ProtSlider:
+                    orientation: 'vertical'
+                    id: protslid
+                    min: 0.01
+                    max: 1
+                    value: 0.5
+                    value_track_color: (1, 1, 1, 1)
+
+                    canvas:
+                        Color:
+                            rgba: (1, 0, 0, 0)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+
+                GlutSlider:
+                    orientation: 'vertical'
+                    id: glutslid
+                    min: 0.01
+                    max: 1
+                    value: 0.5
+                    value_track_color: (1, 1, 1, 1)
+
+                    canvas:
+                        Color:
+                            rgba: (0, 1, 0, 0)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+
+                LipSlider:
+                    orientation: 'vertical'
+                    id: lipslid
+                    min: 0.01
+                    max: 1
+                    value: 0.5
+                    value_track_color: (1, 1, 1, 1)
+                    
+                    canvas:
+                        Color:
+                            rgba: (0, 0, 1, 0)
+                        Rectangle: 
+                            size: self.size
+                            pos: self.pos
+
+<Rect_layout>:
+    id: Rect_lay
+
+<Circles_drawings>:
+    id: Circ_draw
+
+<SideBar>:
+    id: sidebar
+
+<LeftBar>:
+    id: leftbar
+
+<SubBar>:
+    id: subbar
+
+<UpBar>:
+    id: upbar
+
+<GridSpace>:
+    id: gridspace
+
+<LeftGridSpace>:
+    id: leftgridspace
+
+<RightGridSpace>:
+    id: rightgridspace
+
+<StartStop>:
+    id: start_button
+
+<ResetSimulation>:
+    id: reset_button
+
+<GraphWidget>:
+    id: graph
+
+<GraphLeft>:
+    id: graphleft
+
+<Graphright>:
+    id: graphright
+    
+<SlidingButtons>:
+    id: sliders
+
+<ProtSlider>:
+    id: protslid
+
+<GlutSlider>:
+    id: glutslid
+
+<LipSlider>:
+    id: lipslid
+
+<Attack>:
+    id: attack_button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
